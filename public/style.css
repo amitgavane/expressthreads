@@ -1,0 +1,121 @@
+/* ---------- Base Styles ---------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(to right, #f0f2f5, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 40px 0 20px;
+    font-size: 2.5rem;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Post Container ---------- */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 90%;
+}
+
+/* ---------- Post Card ---------- */
+.post {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.post:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Username ---------- */
+.post .user {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* ---------- Content ---------- */
+.post .content {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* ---------- Decorative Gradient Strip ---------- */
+.post::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 6px;
+    background: linear-gradient(to bottom, #0077ff, #00d4ff);
+    top: 0;
+    left: 0;
+    border-radius: 15px 0 0 15px;
+}
+
+/* ---------- Button Group Inside Post ---------- */
+.post button {
+    padding: 8px 14px;
+    margin: 5px 4px 0 0;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #0077ff, #00d4ff);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.post button:hover {
+    background: linear-gradient(to right, #005ecc, #00aaff);
+    transform: scale(1.03);
+}
+
+/* ---------- Delete Button Color ---------- */
+form button {
+    background: linear-gradient(to right, #ff4e4e, #ff8585);
+}
+
+form button:hover {
+    background: linear-gradient(to right, #e02b2b, #ff6d6d);
+}
+
+/* ---------- Create New Post Link ---------- */
+a[href$="/posts/new"] {
+    text-decoration: none;
+    background: #0077ff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 20px auto;
+    transition: background 0.3s ease;
+}
+
+a[href$="/posts/new"]:hover {
+    background: #005ecc;
+}

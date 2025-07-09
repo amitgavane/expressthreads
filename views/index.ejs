@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>All Posts</title>
+</head>
+<body>
+    <h1> THREADS POSTS</h1>
+
+    <div class="container">
+        <% for (let post of posts) { %>
+            <div class="post">
+                <h2 class="user">@<%= post.username %></h2>
+                <h5 class="content"><%= post.content %></h5>
+                
+                <a href="/posts/<%= post.id %>"><button>See in Detail</button></a>
+                <a href="/posts/<%= post.id %>/edit"><button>Edit</button></a>
+
+                <form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                    <button>Delete POST</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+
+    <a href="/posts/new">Create New Post</a>
+</body>
+</html>
